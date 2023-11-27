@@ -82,7 +82,6 @@ button:hover {
 }
 
 table {
-
     border-collapse: collapse;
     width: 100%;
 }
@@ -103,7 +102,7 @@ th, td {
 }
 
 th {
-    background-color: #3498db;
+    background-color: #c72c2c;
     color: #fff;
 }
 
@@ -112,12 +111,12 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-    background-color: #fff;
+    background-color: #c0b8b8;
 }
 
 th {
-    background-color: #3498db;
-    color: #fff;
+    background-color: #beb4b4;
+    color: #0c0c0c;
 }
 
 tfoot {
@@ -125,7 +124,7 @@ tfoot {
     font-weight: 700;
 }
 tfoot td {
-    background-color: lightblue !important;
+    background-color: rgb(166, 32, 32) !important;
 }
 
 .texto-derecha {
