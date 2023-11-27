@@ -37,7 +37,7 @@ function retornarCuota(evento){
     return pagador?.cuota
 }
 
-console.log(retornarCuota('GANA BRASIL'), 'retorna cuota');
+
 
 function armarTablaHTML(partido1, eventoSeleccionado, cuotaAplicada,dineroApostado) {
     tablaDesgloce.innerHTML = '';
@@ -48,6 +48,16 @@ function armarTablaHTML(partido1, eventoSeleccionado, cuotaAplicada,dineroAposta
                                     <td class="texto-derecha">${dineroApostado}</td>
                                    </tr>`;
     
+}
+
+function guardarEnLS(dineroApostado, eventoSeleccionado){
+    localStorage.setItem('MontoSolicitado', dineroApostado)
+    localStorage.setItem('evento', eventoSeleccionado)
+}
+
+function recuperarLC(){
+    inputMonto.value = localStorage.getItem('MontoSolicitado') || ''
+    selectEvento.value = localStorage.getItem('evento') || 'Elige aqui..'
 }
 
 function calcularApuesta(){
@@ -77,6 +87,8 @@ function calcularApuesta(){
     ganaciaTabla.textContent= gananciaEsperada
     const partido1= partido.textContent
 
+    guardarEnLS(apuesta.monto, selectEvento.value)
+
 
     //armamos la tabla html creando una fila para verificar el resumen de la apuesta
     armarTablaHTML(partido1, eventoSeleccionado, cuotaAplicada,dineroApostado );
@@ -88,8 +100,16 @@ function calcularApuesta(){
 //eventos
 
 btnCalcular.addEventListener('click', ()=> calcularApuesta())
-btnApostar.addEventListener('click', ()=> alert('APOSTASTE CABALLO'))
+btnApostar.addEventListener('click', ()=> {
+    alert('Apuesta Realizada⚽️ \nBuena suerte!!')
+    localStorage.clear()
+    location.reload()
+})
+
 
 //llamar funcionalidades principales
 
 elegirApuesta()
+recuperarLC()
+
+
