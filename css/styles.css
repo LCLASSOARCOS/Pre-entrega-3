@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    padding: 0px;
+    /* padding: 0px; */
     box-sizing: border-box;
     background: #faf8f8;
     margin: 0px;
@@ -25,6 +25,8 @@ h1 .titulo{
 
 h2 {
     font-size: 1.5em;
+    margin-left: 80px;
+    color: rgb(4, 6, 9);
 }
 
 .texto-verde {
@@ -33,12 +35,8 @@ h2 {
     font-style: italic;
 }
 
-.panel-apuesta{
-    display: flex;
-    flex-direction: column;
-}
 
-.panel-cotizacion {
+.panel-apuesta {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -73,14 +71,14 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    background-color: #3498db;
+    background-color: #b61d1d;
     color: #fff;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #f61a1a;
 }
 
 table {
